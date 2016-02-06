@@ -1,0 +1,54 @@
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: arial;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, td {
+  font-family: arial;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+//show, edit, destroy
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: rgb(0,255,0);
+    font-size: 17px;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 20px;
+  }
+}
+
+#notice {
+  color: red;
+}
+#graph_title1{
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: arial;
+}
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}

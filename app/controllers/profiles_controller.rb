@@ -11,26 +11,28 @@ class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
   end
-
-  def edit
-  end
-
+  
   def create
-    @profile = Profile.new(profile_params)
+    @profile = Profile.new(profile_premise)
 
     respond_to do |form|
-      if @profile.save
+      if @profile.save then
         form.html { redirect_to @profile, notice: 'Profile was successfully created.' }
-        form.json { render :show, status: :created, location: @profile }
+      else
+        form.html { redirect_to profiles_path, notice: 'Profile creation failed. Missing Inputs!' }
       end
     end
+  end
+  
+  def edit
   end
 
   def update
     respond_to do |form|
-      if @profile.update(profile_params)
+      if @profile.update(profile_premise) then
         form.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
-        form.json { render :show, status: :ok, location: @profile }
+      else
+        form.html { redirect_to profiles_path, notice: 'Profile Editing failed. Missing Inputs!' }
       end
     end
   end
@@ -38,7 +40,7 @@ class ProfilesController < ApplicationController
   def destroy
     @profile.destroy
     respond_to do |form|
-      form.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
+      form.html { redirect_to profiles_path, notice: 'Profile was successfully destroyed.' }
       form.json { head :no_content }
     end
   end
@@ -47,7 +49,23 @@ class ProfilesController < ApplicationController
       @profile = Profile.find(params[:id])
     end
 
-    def profile_params
+    def profile_premise
       params.require(:profile).permit(:Name, :Description, :Country, :string, :Color, :string, :Age, :Weight, :Height)
     end
+    
+    def profiles_chart_data
+        @profiles.each do |profile|
+            {
+                Age:profile.Age,
+                Height:profile.Height,
+                Weight:profile.Weight
+            }
+        end
+    end
+    
+  def remove_all
+    Profile.delete_all
+    flash[:notice] = "You have removed all results!"
+    redirect_to profiles_path
+  end
 end
