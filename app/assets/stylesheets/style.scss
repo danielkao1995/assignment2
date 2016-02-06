@@ -1,54 +1,39 @@
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: rgb(90,90,90);
   font-family: arial;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 15px;
+  line-height: 20px;
 }
 
-p, ol, td {
+p, td {
   font-family: arial;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 15px;
+  line-height: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-//show, edit, destroy
 a {
-  color: #000;
-
+  color: rgb(0,0,0);
+  font-size: 15px;
   &:visited {
-    color: #666;
+    color: rgb(0,0,0);
   }
 
   &:hover {
-    color: rgb(0,255,0);
-    font-size: 17px;
-    background-color: #000;
+    color: rgb(255,255,0);
+    font-size: 20px;
+    background-color: rgb(0,0,0);
   }
 }
 
 div {
-  &.field, &.actions {
-    margin-bottom: 20px;
+  &.input, &.button {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 }
-
 #notice {
   color: red;
 }
-#graph_title1{
-  font-size: 30px;
-  margin-bottom: 10px;
-  font-family: arial;
-}
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
+

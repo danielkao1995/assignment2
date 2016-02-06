@@ -1,34 +1,41 @@
 
 <%= form_for(@profile) do |f| %>
-  <div class="field">
-    <%= f.label :Name %><br>
+  <div class="input">
+    <%= f.label :Name %>
+    <br>
     <%= f.text_field :Name %>
   </div>
-  <div class="field">
-    <%= f.label :Description %><br>
+  <div class="input">
+    <%= f.label :Description %>
+    <br>
     <%= f.text_area :Description %>
   </div>
-  <div class="field">
-    <%= f.label :Country %><br>
+  <div class="input">
+    <%= f.label :Country %>
+    <br>
     <%= f.text_field :Country %>
   </div>
-  <div class="field">
-    <%= f.label :Color %><br>
+  <div class="input">
+    <%= f.label :Color %>
+    <br>
     <%= f.text_field :Color %>
   </div>
-  <div class="field">
-      <%= f.label :Age %><br>
+  <div class="input">
+      <%= f.label :Age %>
+      <br>
       <%= f.number_field :Age %>
   </div>
-  <div class="field">
-      <%= f.label :Weight %><br>
+  <div class="input">
+      <%= f.label :Weight %>
+      <br>
       <%= f.number_field :Weight %>
   </div>
-  <div class="field">
-      <%= f.label :Height %><br>
+  <div class="input">
+      <%= f.label :Height %>
+      <br>
       <%= f.number_field :Height %>
   </div>
-  <div class="actions">
+  <div class="button">
     <%= f.submit %>
   </div>
 <% end %>
